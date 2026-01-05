@@ -20,10 +20,10 @@ export default function Banner() {
           />
         </div>
         <ContentWrapper>
-          <div className="space-y-8 text-center">
+          <div className="space-y-8 text-center text-white">
             <h1 className="space-y-4 text-balance">
               <p className="text-2xl font-semibold first-letter:uppercase">chào mừng bạn</p>
-              <p className="first-letter:uppercase text-xl">Trở thành <span className="text-primary uppercase font-semibold">VIP member <span className="capitalize">miễn phí</span></span> để khám phá hàng triệu bộ phim hot và chương trình độc đáo đang chờ bạn </p>
+              <p className="first-letter:uppercase md:text-xl w-full max-w-2xl mx-auto">Trở thành <span className="text-primary uppercase font-semibold">VIP member <span className="capitalize">miễn phí</span></span> để khám phá hàng trọn vẹn triệu bộ phim hot và chương trình độc đáo đang chờ bạn </p>
             </h1>
             <Button>
               <Link href="/movies" className="inline-flex justify-center items-center gap-1.5 size-full">

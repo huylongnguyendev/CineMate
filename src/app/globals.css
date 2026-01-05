@@ -126,6 +126,6 @@
   }
 }
 
-.transitons {
+.transitions {
   @apply transition-all duration-300;
 }

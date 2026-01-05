@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     default: "CineMate | Khám phá những bộ phim hot và chương trình độc đáo",
     template: "%s | CineMate"
   },
-  description: "CineMate - Nền tảng quản lý và khám phá phim chuyên nghiệp. Cập nhật thông tin, trailer và thống kê điện ảnh cá nhân mỗi ngày.",
+  description: "CineMate - Nền tảng cập nhật và đánh giá phim và chương trình truyền hình. Giúp bạn có trải nghiệm tuyệt vời thưởng thức những tác phẩm yêu thích.",
   keywords: ["phim hay", "xem phim", "đánh giá phim", "cinemate", "movie tracker"],
 }
 
