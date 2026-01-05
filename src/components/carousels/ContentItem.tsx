@@ -12,7 +12,7 @@ export default function ContentItem({
 }: { poster: string, alt: string, title: string, id: number }) {
   return (
     <>
-      <Link href={`/movies/${id}`} className="space-y-4 group">
+      <Link href={`/movies/${id}`} className="space-y-2 group">
         <div className="w-full h-40 overflow-hidden">
           <div className="relative size-full transitions group-hover:scale-105">
             <Image src={imgURL + poster} alt={alt} fill className="object-cover" />

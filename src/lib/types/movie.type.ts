@@ -13,6 +13,7 @@ export interface IMovieItem {
   video: boolean
   vote_average: number
   vote_count: number
+  original_name?: string
 }
 
 export type MovieType = IMovieItem[]

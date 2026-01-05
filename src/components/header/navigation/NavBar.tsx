@@ -2,8 +2,8 @@ import { navList } from "@/lib/data/nav.data"
 import NavWrapper from "./NavWrapper"
 import Link from "next/link"
 import Logo from "@/components/Logo"
-import { Button } from "@/components/ui/button"
 import { X } from "lucide-react"
+import MenuToggle from "@/components/toggles/MenuToggle"
 
 export default function NavBar() {
   const data = navList
@@ -13,12 +13,9 @@ export default function NavBar() {
       <NavWrapper>
         <li className="flex justify-between items-center md:hidden">
           <Logo />
-          <Button
-            variant="outline"
-            size="icon-sm"
-          >
+          <MenuToggle>
             <X />
-          </Button>
+          </MenuToggle>
         </li>
         {
           data.map(item => (

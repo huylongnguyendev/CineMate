@@ -18,11 +18,11 @@ export default async function Content({ type, param }: ContentProps) {
       <CarouselContent>
         {
           data.results.map((item: IMovieItem) => (
-            <CarouselItem key={item.id} className="basis-1/5" >
+            <CarouselItem key={item.id} className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5" >
               <ContentItem
                 id={item.id}
-                title={item.title || item.original_title}
-                alt={item.title || item.original_title}
+                title={item.title || item.original_title || item.original_name || "Chưa cập nhật tên"}
+                alt={item.title || item.original_title || item.original_name || "Chưa cập nhật tên"}
                 poster={item.poster_path}
               />
             </CarouselItem>

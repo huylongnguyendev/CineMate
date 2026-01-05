@@ -5,7 +5,9 @@ interface HomeProps {
   searchParams: { [key: string]: string | string[] | undefined }
 }
 
-export default function Home({ searchParams }: HomeProps) {
+export default async function Home({ searchParams }: HomeProps) {
+  const sParams = await searchParams
+
   return (
     <>
       <main className="space-y-20">
@@ -14,7 +16,7 @@ export default function Home({ searchParams }: HomeProps) {
           title="Xu Hướng"
           type="trending"
           filter
-          searchParams={searchParams} // Truyền params để lấy trending=day/week
+          searchParams={sParams} // Truyền params để lấy trending=day/week
         />
 
         {/* Mục Phổ biến: Không cần filter, param mặc định */}

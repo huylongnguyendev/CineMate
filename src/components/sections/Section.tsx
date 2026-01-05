@@ -10,14 +10,15 @@ type SectionProps = TitleProps & Omit<ContentProps, "param"> & {
   searchParams?: { [key: string]: string | string[] | undefined }
 }
 
-export default function Section({
+export default async function Section({
   title,
   filter = false,
   className,
   type,
   searchParams
 }: { searchParams?: { [key: string]: string | string[] | undefined } } & SectionProps) {
-  const currentParam = (searchParams?.trending as string) || "day"
+  const sParams = await searchParams
+  const currentParam = (sParams?.trending as string) || "day"
 
   return (
     <>
