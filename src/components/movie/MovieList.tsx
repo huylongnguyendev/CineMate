@@ -9,6 +9,7 @@ export interface MovieSearchParams {
   page?: string
   genre?: string
   year?: string
+  sort_by?: string
 }
 
 
@@ -16,11 +17,12 @@ export default async function MovieList({
   searchParams }: {
     searchParams: Promise<MovieSearchParams>
   }) {
-  const resultPatams = await searchParams
-  const page = resultPatams?.page || "1"
-  const year = resultPatams?.year || ""
+  const resultParams = await searchParams
+  const page = resultParams?.page || "1"
+  const year = resultParams?.year || ""
+  const sort = resultParams?.sort_by || ""
 
-  const params = `page=${page}&primary_release_year=${year}`
+  const params = `page=${page}&primary_release_year=${year}&sort_by=${sort}`
   const data: MovieResponse = await movieService.getMovie(params)
 
   return (
