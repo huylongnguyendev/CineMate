@@ -1,12 +1,11 @@
 import { Button } from '@/components/ui/button'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import { Film, Heart } from 'lucide-react'
-import React from 'react'
 
 export default function ItemActions() {
   return (
     <>
-      <div className="my-8 space-x-2">
+      <div className="my-4 space-x-2">
         <Tooltip>
           <TooltipTrigger asChild>
             <Button variant="secondary" size="icon">

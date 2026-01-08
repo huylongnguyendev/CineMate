@@ -7,7 +7,7 @@ export default function ItemScore({ score }: { score: number }) {
 
   return (
     <>
-      <div className="flex items-center gap-4 my-8">
+      <div className="flex items-center gap-4 mt-8">
         <p className="font-semibold">Điểm:</p>
         <p className={cn("text-lg font-semibold", setColor)}>{score * 10}%</p>
       </div>
