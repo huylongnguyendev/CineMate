@@ -1,4 +1,5 @@
 @import "tailwindcss";
+
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
@@ -116,10 +117,54 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
   * {
     @apply border-border outline-ring/50;
   }
+  
   body {
     @apply bg-background text-foreground font-bevn-pro;
   }
 }
+
+@layer utilities {
+  /* Tùy chỉnh thanh cuộn cho toàn bộ trang */
+  ::-webkit-scrollbar {
+    width: 12px;
+    /* Độ rộng vừa phải */
+  }
+  
+  /* Phần nền (Track) - Spotify thường để trong suốt hoặc rất tối */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  /* Phần tay kéo (Thumb) */
+  ::-webkit-scrollbar-thumb {
+    /* Màu xám nhẹ, không quá nổi bật */
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    /* Quan trọng: Tạo khoảng trống (padding) bằng Border để thanh cuộn trông mảnh và nổi giữa track */
+    border: 3px solid transparent;
+    background-clip: content-box;
+  }
+  
+  /* Khi di chuột vào thanh cuộn (Hover) */
+  ::-webkit-scrollbar-thumb:hover {
+    /* Màu sáng hơn một chút khi tương tác */
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Khi đang kéo thanh cuộn (Active) */
+  ::-webkit-scrollbar-thumb:active {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .transitions {
+    @apply transition-all duration-500;
+  }
+}
+
