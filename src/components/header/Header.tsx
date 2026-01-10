@@ -1,5 +1,6 @@
 import Container from "../common/Container"
 import Logo from "../common/Logo"
+import HeaderBackground from "./HeaderBackground"
 import NavBar from "./navigation/NavBar"
 import NavInteractive from "./navigation/NavInteractive"
 
@@ -7,6 +8,7 @@ export default function Header() {
   return (
     <>
       <header className="fixed w-full top-0 left-0 z-50 py-4">
+        <HeaderBackground />
         <Container>
           <nav className="flex justify-between items-center">
             <Logo />

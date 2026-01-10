@@ -133,34 +133,39 @@
 @layer utilities {
   /* Tùy chỉnh thanh cuộn cho toàn bộ trang */
   ::-webkit-scrollbar {
-    width: 12px;
-    /* Độ rộng vừa phải */
+    width: 8px;
+    /* Độ mảnh chuẩn hiện đại */
+    height: 8px;
+    /* Cho thanh cuộn ngang */
   }
   
-  /* Phần nền (Track) - Spotify thường để trong suốt hoặc rất tối */
+  /* 2. Ẩn hoàn toàn nút mũi tên */
+  ::-webkit-scrollbar-button {
+    display: none;
+  }
+  
+  /* 3. Phần nền (Track) */
   ::-webkit-scrollbar-track {
     background: transparent;
   }
   
-  /* Phần tay kéo (Thumb) */
+  /* 4. Tay kéo (Thumb) - Dùng color-mix để tự đổi màu */
   ::-webkit-scrollbar-thumb {
-    /* Màu xám nhẹ, không quá nổi bật */
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    /* Quan trọng: Tạo khoảng trống (padding) bằng Border để thanh cuộn trông mảnh và nổi giữa track */
-    border: 3px solid transparent;
+    background-color: color-mix(in srgb, currentColor, transparent 80%);
+    border-radius: 100px;
+    /* Tạo khoảng cách để thanh cuộn nổi giữa vùng track */
+    border: 2px solid transparent;
     background-clip: content-box;
+    cursor: grab;
   }
   
-  /* Khi di chuột vào thanh cuộn (Hover) */
+  /* 5. Hiệu ứng Hover */
   ::-webkit-scrollbar-thumb:hover {
-    /* Màu sáng hơn một chút khi tương tác */
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: color-mix(in srgb, currentColor, transparent 60%);
   }
-  
-  /* Khi đang kéo thanh cuộn (Active) */
+
   ::-webkit-scrollbar-thumb:active {
-    background-color: rgba(255, 255, 255, 0.5);
+    cursor: grabbing;
   }
   
   .transitions {

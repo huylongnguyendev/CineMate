@@ -22,7 +22,7 @@ export default function NavBar() {
             <li key={item.title}>
               <Link
                 href={item.url}
-                className="flex md:items-center px-1.5 py-2 md:px-2 md:py-1 rounded-md transitions hover:bg-accent active:bg-accent hover:text-primary active:text-primary"
+                className="flex md:items-center px-1.5 py-2 md:px-2 md:py-1 rounded-md font-semibold transitions hover:bg-accent active:bg-accent hover:text-primary active:text-primary"
               >
                 {item.title}
               </Link>
