@@ -1,19 +1,10 @@
-import { cn } from "@/lib/utils"
+import { cn, setColor } from "@/lib/utils"
 import { Star, StarHalf } from "lucide-react"
 
 export default function Stars({ score }: { score: number }) {
   const rateStar = (score * 0.5).toFixed(1)
-  function setColor() {
-    if (score < 4)
-      return "text-red-600"
-    if (score < 6)
-      return "text-amber-600"
-    if (score < 8)
-      return "text-yellow-600"
-    return "text-green-600"
-  }
 
-  const color = setColor()
+  const color = setColor(score)
 
   return (
     <>

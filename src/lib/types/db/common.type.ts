@@ -16,3 +16,45 @@ export interface ICommonDiscover {
   total_pages: number
   total_results: number
 }
+
+export interface IGenreForDetailItem {
+  id: number
+  name: string
+}
+
+export interface IProductionCompanyForDetailItem {
+  id: number
+  logo_path: string
+  name: string
+  origin_country: string
+}
+
+export interface IProductionCountryForDetailItem {
+  iso_3166_1: string
+  name: string
+}
+
+export interface ISpokenLanguageItem {
+  english_name: string
+  iso_639_1: string
+  name: string
+}
+
+export interface ICommonDetail {
+  adult: boolean
+  backdrop_path: string
+  genres: IGenreForDetailItem[]
+  homepage: string
+  id: number
+  original_language: string
+  overview: string
+  popularity: number
+  poster_path: string
+  production_companies: IProductionCompanyForDetailItem[]
+  production_countries: IProductionCountryForDetailItem[]
+  spoken_languages: ISpokenLanguageItem[]
+  status: string
+  tagline: string
+  vote_average: number
+  vote_count: number
+}

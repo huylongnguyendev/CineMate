@@ -1,4 +1,5 @@
-import { ICommonDiscover, ICommonDiscoverItem } from "./common.type"
+import { ICommonDiscover, ICommonDiscoverItem } from "../common.type"
+
 
 export interface IMovieDiscoverItem {
   adult: boolean

@@ -1,6 +1,6 @@
 import Stars from "@/components/common/Stars"
 import { smallImgURL } from "@/lib/apis/base.api"
-import { ResultType } from "@/lib/types/db/movie.type"
+import { ResultType } from "@/lib/types/db/movie/movie.type"
 import Image from "next/image"
 import Link from "next/link"
 

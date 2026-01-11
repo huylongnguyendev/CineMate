@@ -45,7 +45,7 @@ export default function PaginationBar({ totalPage }: { totalPage: number }) {
           </PaginationItem>
 
           {
-            getPageList.map((item, index) => (
+            getPageList.map((item) => (
               <PaginationItem key={"page-" + item}>
                 {
                   typeof item !== "string" ? (
