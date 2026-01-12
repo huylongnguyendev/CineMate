@@ -6,6 +6,7 @@ import DetailTop from "./DetailTop"
 import Image from "next/image"
 import { largeImgURL } from "@/lib/apis/base.api"
 import BreadcrumbBar from "@/components/common/BreadcrumbBar"
+import JobsListCarousel from "@/components/jobs/JobsListCarousel"
 
 export default async function MovieDetails({ params }: IParams) {
   const { id } = await params
@@ -33,6 +34,7 @@ export default async function MovieDetails({ params }: IParams) {
         </div>
         <DetailTop item={data.data} />
       </div>
+      <JobsListCarousel id={data.data.id} />
     </>
   )
 }

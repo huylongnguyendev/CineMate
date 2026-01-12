@@ -25,6 +25,17 @@ export const tmdb = {
         data,
         status: res.status
       }
+    },
+    getCredit: async (id: string) => {
+      const res = await fetch(`${baseURL}movie/${id}/credits?language=vi-VN`, getApiOptions("GET"))
+
+      if (!res.ok) return res.status
+
+      const data = await res.json()
+      return {
+        data,
+        status: res.status
+      }
     }
   },
 }

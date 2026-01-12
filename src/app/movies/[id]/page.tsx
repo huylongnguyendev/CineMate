@@ -6,7 +6,7 @@ import { Suspense } from "react"
 export default async function page({ params }: IParams) {
   return (
     <>
-      <Container className="mt-18 space-y-4">
+      <Container className="mt-18 space-y-8">
         <Suspense>
           <MovieDetails params={params} />
         </Suspense>
