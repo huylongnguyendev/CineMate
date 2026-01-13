@@ -4,7 +4,7 @@ import HeroClient from "./HeroClient"
 export default function Hero() {
   return (
     <>
-      <section className="relative h-44 mt-18 text-center bg-primary z-10">
+      <section className="relative h-44 text-center bg-primary z-10">
         <div className="absolute inset-0 bg-linear-to-t from-background via-background/20 to-transparent -z-10"/>
         <Container className="h-full">
           <HeroClient className="h-full flex flex-col items-center justify-center">

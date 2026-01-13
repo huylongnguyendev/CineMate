@@ -37,8 +37,8 @@ export const tmdb = {
         status: res.status
       }
     },
-    getReview: async (params: string, id: string) => {
-      const res = await fetch(`${baseURL}movie/${id}/reviews?language=en-US${params}`, getApiOptions("GET"))
+    getReview: async (type: "movie" | "tv", params: string, id: string) => {
+      const res = await fetch(`${baseURL}${type}/${id}/reviews?language=en-US${params}`, getApiOptions("GET"))
 
       if (!res.ok) return res.status
 

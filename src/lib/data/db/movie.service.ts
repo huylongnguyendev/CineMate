@@ -19,7 +19,7 @@ export const movieService = {
     return res
   },
   getReview: async (params: string, id: string) => {
-    const res: { data: IReviewResponse, status: number } | number = await tmdb.details.getReview(params, id)
+    const res: { data: IReviewResponse, status: number } | number = await tmdb.details.getReview("movie",params, id)
     return res
   },
 }

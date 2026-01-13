@@ -1,5 +1,5 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { smallImgURL } from "../../../lib/apis/base.api"
+import { smallImgURL } from "../../lib/apis/base.api"
 import { IReviewItem } from "@/lib/types/db/review.type"
 import ReviewCollapsible from "./ReviewCollapsible"
 

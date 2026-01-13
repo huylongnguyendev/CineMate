@@ -59,7 +59,7 @@ export default function RootLayout({
             shadow="0 0 10px #22c55e,0 0 5px #22c55e"
           />
           <Header />
-          <main>
+          <main className="mt-18">
             {children}
           </main>
           <Toaster richColors closeButton />

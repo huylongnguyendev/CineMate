@@ -1,8 +1,8 @@
 import Heading from "@/components/common/Heading"
-import { movieService } from "@/lib/data/db/movie.service"
 import { ISearchParams } from "@/lib/types/params.type"
-import ReviewItem from "../ReviewItem"
 import PaginationBar from "@/components/common/PaginationBar"
+import { showService } from "@/lib/data/db/show.service"
+import ReviewItem from "../ReviewItem"
 
 interface ReviewListProps {
   id: number
@@ -12,7 +12,7 @@ interface ReviewListProps {
 export default async function ReviewList({ id, searchParams }: ReviewListProps) {
   const { page = "1" } = await searchParams
 
-  const data = await movieService.getReview(`&page=${page}`, id.toString())
+  const data = await showService.getReview(`&page=${page}`, id.toString())
 
   return (
     <>

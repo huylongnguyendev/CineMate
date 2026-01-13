@@ -1,9 +1,9 @@
 import Container from "@/components/common/Container"
-import MovieDetails from "@/components/products/movies/details/MovieDetails"
+import ShowDetails from "@/components/products/tv/details/ShowDetails"
 import { IParams, ISearchParams } from "@/lib/types/params.type"
 import { Suspense } from "react"
 
-export default async function page({
+export default function page({
   params,
   searchParams
 }: IParams & { searchParams: ISearchParams }) {
@@ -11,7 +11,7 @@ export default async function page({
     <>
       <Container className="space-y-8">
         <Suspense>
-          <MovieDetails params={params} searchParams={searchParams} />
+          <ShowDetails params={params} searchParams={searchParams} />
         </Suspense>
       </Container>
     </>

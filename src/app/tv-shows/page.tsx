@@ -1,5 +1,5 @@
 import Container from "@/components/common/Container"
-import MovieList from "@/components/products/movies/MovieList"
+import ShowList from "@/components/products/tv/ShowList"
 import { Skeleton } from "@/components/ui/skeleton"
 import { ISearchParams } from "@/lib/types/params.type"
 import { Suspense } from "react"
@@ -20,7 +20,7 @@ export default function page({ searchParams }: { searchParams: Promise<ISearchPa
             }
           </div>
         }>
-          <MovieList searchParams={searchParams} />
+          <ShowList searchParams={searchParams} />
         </Suspense>
       </Container>
     </>

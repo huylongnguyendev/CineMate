@@ -1,6 +1,5 @@
 import { ICommonDiscover, ICommonDiscoverItem } from "../common.type"
 
-
 export interface IMovieDiscoverItem {
   adult: boolean
   original_title: string
@@ -14,9 +13,3 @@ export interface IMovieResponse extends ICommonDiscover {
   results: ResultType[]
 }
 
-// export interface IShowDiscoverItem {
-//   first_air_date: string
-//   name: string
-//   origin_country: string[]
-//   original_name: string
-// }
