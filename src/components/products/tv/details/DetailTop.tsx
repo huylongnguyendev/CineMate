@@ -49,14 +49,17 @@ export default function DetailTop({ item }: { item: IShowDetailItem }) {
             <div className="flex items-center gap-1">
               <p className="font-semibold">Số mùa:</p>
               <p className="text-muted-foreground">
-                {item.last_episode_to_air.season_number}/{item.number_of_seasons}
+                {item.last_episode_to_air?.season_number ?? "Không có thông tin"}/{item.number_of_seasons}
               </p>
             </div>
             <p className="font-semibold">-</p>
             <div className="flex items-center gap-1">
               <p className="font-semibold">Số tập:</p>
               <p className="text-muted-foreground">
-                {item.last_episode_to_air.episode_number}/{item.seasons[item.seasons.length - 1].episode_count}
+                {
+                  item.last_episode_to_air?.episode_number && item.seasons ?
+                    item.last_episode_to_air?.episode_number / item.seasons[item.seasons.length - 1].episode_count : "Không xác định"
+                }
               </p>
             </div>
           </div>

@@ -4,6 +4,7 @@ import { IParams, ISearchParams } from "@/lib/types/params.type"
 import { Suspense } from "react"
 import { Metadata } from "next"
 import { movieService } from "@/lib/data/db/movie.service"
+import { Skeleton } from "@/components/ui/skeleton"
 
 export async function generateMetadata({
   params
@@ -36,8 +37,13 @@ export default async function page({
 }: IParams & { searchParams: ISearchParams }) {
   return (
     <>
-      <Container className="space-y-8">
-        <Suspense>
+      <Container className="space-y-8 pb-4">
+        <Suspense fallback={
+          <div className="flex max-md:flex-col items-center gap-10">
+            <Skeleton className="w-full md:w-1/3 h-150" />
+            <Skeleton className="w-full md:w-2/3 h-150" />
+          </div>
+        }>
           <MovieDetails params={params} searchParams={searchParams} />
         </Suspense>
       </Container>

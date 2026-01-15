@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef } from "react"
-import { Carousel, CarouselContent } from "../ui/carousel"
+import { Carousel, CarouselContent, CarouselNext, CarouselPrevious } from "../ui/carousel"
 import Autoplay from "embla-carousel-autoplay"
 
 interface AnimateCarouselProps {
@@ -34,6 +34,8 @@ export default function AnimateCarousel({
         <CarouselContent>
           {children}
         </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
       </Carousel>
     </>
   )

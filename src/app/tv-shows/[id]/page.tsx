@@ -1,5 +1,6 @@
 import Container from "@/components/common/Container"
 import ShowDetails from "@/components/products/tv/details/ShowDetails"
+import { Skeleton } from "@/components/ui/skeleton"
 import { showService } from "@/lib/data/db/show.service"
 import { IParams, ISearchParams } from "@/lib/types/params.type"
 import { Metadata } from "next"
@@ -36,8 +37,13 @@ export default function page({
 }: IParams & { searchParams: ISearchParams }) {
   return (
     <>
-      <Container className="space-y-8">
-        <Suspense>
+      <Container className="space-y-8 pb-4">
+        <Suspense fallback={
+          <div className="flex max-md:flex-col items-center gap-10">
+            <Skeleton className="w-full md:w-1/3 h-150" />
+            <Skeleton className="w-full md:w-2/3 h-150" />
+          </div>
+        }>
           <ShowDetails params={params} searchParams={searchParams} />
         </Suspense>
       </Container>
