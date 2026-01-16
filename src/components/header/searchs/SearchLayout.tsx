@@ -2,7 +2,6 @@
 
 import Container from "@/components/common/Container"
 import { Button } from "@/components/ui/button"
-import { baseURL, getApiOptions } from "@/lib/apis/base.api"
 import { useAppStore } from "@/lib/stores/store"
 import { ISearchResponse, ResultSearchType } from "@/lib/types/db/movie/movie.type"
 import { cn } from "@/lib/utils"
@@ -11,6 +10,7 @@ import { X } from "lucide-react"
 import { useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react"
 import SearchItem from "./SearchItem"
+import { searchService } from "@/lib/data/db/search.service"
 
 export default function SearchLayout() {
   const isOpenSearch = useAppStore((state) => state.isOpenSearch)
@@ -30,12 +30,12 @@ export default function SearchLayout() {
         setResult([])
         return
       }
-      const res = await fetch(`${baseURL}search/multi?query=${query}&language=en-US&page=1`, getApiOptions("GET", 0, true))
-      if (!res.ok) {
-        setResult([])
+      const data: ISearchResponse | [] = await searchService(query)
+
+      if (Array.isArray(data) ) {
+        setResult(data)
         return
       }
-      const data: ISearchResponse = await res.json()
       const finalResult = data.results.filter((item): item is MediaOnly => item.media_type !== "person")
       setResult(finalResult)
     }

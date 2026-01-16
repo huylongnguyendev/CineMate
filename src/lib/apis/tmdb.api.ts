@@ -61,7 +61,7 @@ export const tmdb = {
     }
   },
   video: async (type: "movie" | "tv", id: string) => {
-    const res = await fetch(`${baseURL}${type}/${id}/videos?language=en-US`, getApiOptions("GET"))
+    const res = await fetch(`${baseURL}${type}/${id}/videos?language=vi-VN`, getApiOptions("GET"))
     return await res.json()
   },
   configuration: {
@@ -72,6 +72,13 @@ export const tmdb = {
   },
   genres: async (type: "movie" | "tv") => {
     const res = await fetch(`${baseURL}genre/${type}/list?language=vi-VN`, getApiOptions("GET"))
+    return await res.json()
+  },
+  search: async (query: string) => {
+    const res = await fetch(`${baseURL}search/multi?query=${query}&language=vi-VN&page=1`, getApiOptions("GET", 0, true))
+    if (!res.ok) {
+      return []
+    }
     return await res.json()
   }
 }
