@@ -3,7 +3,6 @@
 import Container from "@/components/common/Container"
 import { Button } from "@/components/ui/button"
 import { useAppStore } from "@/lib/stores/store"
-import { ISearchResponse, ResultSearchType } from "@/lib/types/db/movie/movie.type"
 import { cn } from "@/lib/utils"
 import { X } from "lucide-react"
 
@@ -11,6 +10,7 @@ import { useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react"
 import SearchItem from "./SearchItem"
 import { searchService } from "@/lib/data/db/search.service"
+import { ISearchResponse, ResultSearchType } from "@/lib/types/db/common.type"
 
 export default function SearchLayout() {
   const isOpenSearch = useAppStore((state) => state.isOpenSearch)

@@ -80,5 +80,29 @@ export const tmdb = {
       return []
     }
     return await res.json()
-  }
+  },
+  movieSections: {
+    getTrending: async () => {
+      const res = await fetch(`${baseURL}trending/movie/day?language=vi-VN`, getApiOptions("GET"))
+      if (!res.ok) return []
+      return await res.json()
+    },
+    getMovieList: async (topic: "now_playing" | "top_rated" | "upcoming") => {
+      const res = await fetch(`${baseURL}movie/${topic}?language=vi-VN`, getApiOptions("GET"))
+      if (!res.ok) return []
+      return await res.json()
+    }
+  },
+  showSections: {
+    getTrending: async () => {
+      const res = await fetch(`${baseURL}trending/tv/day?language=vi-VN`, getApiOptions("GET"))
+      if (!res.ok) return []
+      return await res.json()
+    },
+    getShowList: async (topic: "airing_today" | "on_the_air" | "top_rated") => {
+      const res = await fetch(`${baseURL}tv/${topic}?language=vi-VN`, getApiOptions("GET"))
+      if (!res.ok) return []
+      return await res.json()
+    }
+  },
 }

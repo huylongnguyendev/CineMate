@@ -13,3 +13,11 @@ export type ResultType = ICommonDiscoverItem & IShowDiscoverItem
 export interface IShowResponse extends ICommonDiscover {
   results: ResultType[]
 }
+
+export interface IShowSectionResponse extends ICommonDiscover {
+  dates?: {
+    maximum: string
+    minimum: string
+  }
+  results: ResultType[]
+}

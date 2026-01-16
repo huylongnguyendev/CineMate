@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef } from "react"
-import { Carousel, CarouselContent, CarouselNext, CarouselPrevious } from "../ui/carousel"
+import { Carousel, CarouselContent } from "../ui/carousel"
 import Autoplay from "embla-carousel-autoplay"
 
 interface AnimateCarouselProps {
@@ -27,15 +27,15 @@ export default function AnimateCarousel({
       <Carousel
         opts={{ loop, duration }}
         plugins={[plugin.current]}
-        className="w-full"
+        className="relative w-full"
         onMouseEnter={plugin.current.stop}
         onMouseLeave={plugin.current.reset}
       >
+        <div className="absolute w-1/3 h-full top-0 left-0 z-1 bg-linear-to-r from-background via-background/20 to-transparent pointer-events-none" />
+        <div className="absolute w-1/3 h-full top-0 right-0 z-1 bg-linear-to-l from-background via-background/20 to-transparent pointer-events-none" />
         <CarouselContent>
           {children}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
       </Carousel>
     </>
   )

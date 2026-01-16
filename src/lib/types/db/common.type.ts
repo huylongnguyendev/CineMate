@@ -1,3 +1,6 @@
+import { IMovieDiscoverItem } from "./movie/movie.type"
+import { IShowDiscoverItem } from "./tv/show.type"
+
 export interface ICommonDiscoverItem {
   backdrop_path: string
   genre_ids: number[]
@@ -68,4 +71,14 @@ export interface ICommonJobItem {
   popularity: number
   profile_path: string
   credit_id: string
+}
+
+export type ResultSearchType = ICommonDiscoverItem & (
+  | (IMovieDiscoverItem & { media_type: "movie" }) 
+  | (IShowDiscoverItem & { media_type: "tv" })
+  | { media_type: "person" }
+)
+
+export interface ISearchResponse extends ICommonDiscover {
+  results: ResultSearchType[]
 }

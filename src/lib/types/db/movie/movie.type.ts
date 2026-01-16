@@ -1,5 +1,4 @@
 import { ICommonDiscover, ICommonDiscoverItem } from "../common.type"
-import { IShowDiscoverItem } from "../tv/show.type"
 
 export interface IMovieDiscoverItem {
   adult: boolean
@@ -14,14 +13,10 @@ export interface IMovieResponse extends ICommonDiscover {
   results: ResultType[]
 }
 
-
-export type ResultSearchType = ICommonDiscoverItem & (
-  | (IMovieDiscoverItem & { media_type: "movie" }) 
-  | (IShowDiscoverItem & { media_type: "tv" })
-  | { media_type: "person" }
-)
-
-export interface ISearchResponse extends ICommonDiscover {
-  results: ResultSearchType[]
+export interface IMovieSectionResponse extends ICommonDiscover {
+  dates?: {
+    maximum: string
+    minimum: string
+  }
+  results: ResultType[]
 }
-

@@ -2,7 +2,7 @@
 
 import { smallImgURL } from "@/lib/apis/base.api"
 import { useAppStore } from "@/lib/stores/store"
-import { ResultSearchType } from "@/lib/types/db/movie/movie.type"
+import { ResultSearchType } from "@/lib/types/db/common.type"
 import Image from "next/image"
 import Link from "next/link"
 
