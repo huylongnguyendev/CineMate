@@ -81,7 +81,7 @@ export default function DetailTop({ item }: { item: IShowDetailItem }) {
               ))
             }
           </div>
-          <DetailAction id={item.id} />
+          <DetailAction item={item} />
           <div className="space-y-0.5 my-8">
             <p className="font-semibold">Nội dung:</p>
             <p className="text-muted-foreground text-balance">{item.overview}</p>
