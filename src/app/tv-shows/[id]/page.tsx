@@ -17,7 +17,7 @@ export async function generateMetadata({
     title: ""
   }
 
-  const res = await showService.getOne("movie", id)
+  const res = await showService.getOne("tv", id)
   if (typeof res !== "number" && res.data) {
     const title = `${res.data.name || res.data.original_name}`
     return {
