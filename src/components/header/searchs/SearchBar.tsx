@@ -34,7 +34,6 @@ export default function SearchBar() {
   }, [searchParams, pathName, setCloseSearch])
 
   useEffect(() => {
-    console.log("test-----------------")
     const currentUrlQuery = new URLSearchParams(window.location.search).get("query") || ""
     if (debounceQuery !== currentUrlQuery)
       handleSearch(debounceQuery)
